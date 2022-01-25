@@ -9,7 +9,7 @@ const App=()=> {
     <div className="App">
       <Router>
             <Routes>
-              <Route exact path="/" component={UserViewPage} />
+              <Route exact path="/" element={<UserViewPage/>} />
             </Routes>
         </Router>
   
