@@ -1,5 +1,5 @@
-
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -67,5 +67,13 @@ const UserTable=({rows})=> {
     </TableContainer>
   );
 }
+UserTable.propTypes = {
+    rows: PropTypes.array
+  };
+
+  UserTable.defaultProps ={
+    rows:[]
+  }
+
 
 export default UserTable;
