@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import {
     OutlinedInput,
     FormHelperText,
@@ -7,8 +8,8 @@ import {
     MenuItem
 } from "@mui/material";
 
-const Dopdown = ({ values, user, handleChange, error }) => {
- 
+const Dropdown = ({ values, user, handleChange, error }) => {
+
     return <>
         <InputLabel id="demo-multiple-name-label">User</InputLabel>
         <Select
@@ -31,4 +32,18 @@ const Dopdown = ({ values, user, handleChange, error }) => {
     </>
 }
 
-export default Dopdown;
+Dropdown.propTypes = {
+    values: PropTypes.array,
+    user: PropTypes.string,
+    handleChange: PropTypes.func,
+    error: PropTypes.string,
+};
+
+Dropdown.defaultProps = {
+    values: [],
+    user: "",
+    handleChange: () => { },
+    error: "",
+}
+
+export default Dropdown;

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
+import { propOr } from 'ramda';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -20,7 +22,7 @@ const CardComponent = ({ info }) => {
             For user
           </Typography>
           <Typography variant="body2">
-            {`${user.name}  ${user.last}`}
+            {`${propOr("", "name")(user)}  ${propOr("", "last")(user)}`}
           </Typography>
         </CardContent>
       </Card>
@@ -28,5 +30,12 @@ const CardComponent = ({ info }) => {
   );
 }
 
+CardComponent.propTypes = {
+  info: PropTypes.object
+};
+
+CardComponent.defaultProps ={
+  info:{}
+}
 
 export default CardComponent;
