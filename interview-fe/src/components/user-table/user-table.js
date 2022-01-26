@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { DataGrid } from '@mui/x-data-grid';
 import PropTypes from 'prop-types';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,43 +10,25 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 import userTableColumns from "./user-table-columns"
-
+import "./user-table.css"
 
 const UserTable=({data, handleClick})=> {
-  return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-          {userTableColumns.map((headCell) => (
-          <TableCell
-            key={headCell.id}
-            align={ 'left'}
-            padding={'normal'}
-    
-          >
-           {headCell.label}
-          </TableCell>
-        ))}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((row) => (
-            <TableRow
-            onClick={(event) => handleClick(event, row)}
-              key={row.id}
-            >
-              <TableCell align='left'>{row.name}</TableCell>
-              <TableCell align='left'>{row.last}</TableCell>
-              <TableCell align='left'>{row.gender}</TableCell>
-              <TableCell align='left'>{row.age}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+
+    return (
+      <div className='table-container'> 
+        <DataGrid
+          rows={data}
+          columns={userTableColumns}
+          pageSize={5}
+          rowsPerPageOptions={[5]}
+          checkboxSelection
+          onSelectionModelChange={handleClick}
+        />
+        </div>
+    );
+
 }
+
 UserTable.propTypes = {
     data: PropTypes.array
   };

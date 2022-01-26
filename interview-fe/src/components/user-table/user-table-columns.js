@@ -1,27 +1,23 @@
 const userTableColumns = [
     {
-      id: 'name',
-      numeric: false,
-      disablePadding: true,
-      label: 'User name',
+      field: 'name',
+      headerName: 'User name',
+      width: 170,
     },
     {
-      id: 'last',
-      numeric: false,
-      disablePadding: false,
-      label: 'Last name',
+      field: 'last',
+      headerName: 'Last name',
+      width: 170,
     },
     {
-      id: 'gender',
-      numeric: false,
-      disablePadding: false,
-      label: 'Gender',
+      field: 'gender',
+      headerName: 'Gender',
+      width: 170,
     },
     {
-      id: 'age',
-      numeric: true,
-      disablePadding: false,
-      label: 'Age',
+      field: 'age',
+      headerName: 'Age',
+      width: 170,
     },
 
   ];
