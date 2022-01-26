@@ -42,9 +42,9 @@ const UserViewPage = () => {
       });
   }, []);
 
-  return <> <Button variant="outlined" onClick={handleView} disabled={isDisabled}>View messages</Button>
+  return <>
+    <Button variant="outlined" onClick={handleView} disabled={isDisabled}>View messages</Button>
     <div className="user-page">
-
       <UserTable data={data} handleClick={handleSelect} />
     </div>
   </>

@@ -1,0 +1,19 @@
+.login-header {
+    background-color:rgb(2, 2, 63);
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .button-css {
+    margin-bottom: 20px !important;
+  }
+
+.send-container{
+    display: flex;
+    justify-content: center;
+
+}
+
+.form-control{
+    width: 100% !important;
+}
