@@ -1,36 +1,30 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import "./card-component.css"
 
 const CardComponent=({info})=> {
-    const{message}=info;
+    const{message, user}=info;
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <div className='card'>
+    <Card >
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography  color="text.secondary" gutterBottom>
          Message card
         </Typography>
-        <Typography variant="h5" component="div">
+        <Typography variant="body2">
          {message}
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
+        <Typography color="text.secondary">
+          For user
         </Typography>
         <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          {`${user.name}  ${user.last}`}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
+    </div>
   );
 }
 

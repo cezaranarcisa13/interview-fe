@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { equals, propOr, length } from "ramda";
+import { equals, propOr, length, propEq,find } from "ramda";
 import { useNavigate } from "react-router";
 import Button from '@mui/material/Button';
 import { getUser } from "../../api/user";
@@ -17,7 +17,9 @@ const UserViewPage=()=>{
     }
 
     const handleView=()=>{
-      history("/messages", { state: selectedRows });
+      const user=find(propEq("id",selectedRows[0]))(data);
+      localStorage.setItem('user', user);
+      history("/messages", { state: user });
     }
 
     const isDisabled=!equals(length(selectedRows),1);
