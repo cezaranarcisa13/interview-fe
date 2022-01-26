@@ -11,8 +11,8 @@ const App = () => {
   return (
     <div className="App">
       <UserContextProvider>
-        <AppBar />
         <Router>
+        <AppBar />
           <Routes>
             <Route exact path="/" element={<UserViewPage />} />
             <Route exact path="/messages" element={<ViewMessages />} />
