@@ -18,3 +18,9 @@ interview-fe
 ```
    npm run test
    ```
+# Structure
+    * api - includes the BE calls from application
+    * components - includes all components from application that are stateless and can be reused
+    * screen - includes main application pages, usualy they are statefull components
+    * service - this is the place where the POST, GET methonds are define and olso where the headers are added
+   
