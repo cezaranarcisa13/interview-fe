@@ -6,8 +6,9 @@ const UserContextProvider = ({ children }) => {
   const localData = localStorage.getItem("user");
   const userData = localData ? JSON.parse(localData) : {};
   const [user, setUser] = useState(userData);
+  const [usersList, setUserList]=useState([]);
 
-  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
+  const value = useMemo(() => ({ user, setUser,usersList, setUserList }), [user, setUser,usersList, setUserList]);
 
   useEffect(() => {
     localStorage.setItem('user', JSON.stringify(user));

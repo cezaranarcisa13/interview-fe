@@ -8,23 +8,22 @@ import {
 } from "@mui/material";
 
 const Dopdown = ({ values, user, handleChange, error }) => {
-
+ 
     return <>
         <InputLabel id="demo-multiple-name-label">User</InputLabel>
         <Select
             labelId="demo-multiple-name-label"
             id="demo-multiple-name"
-            multiple
             value={user}
             onChange={handleChange("user")}
             input={<OutlinedInput label="User" />}
         >
-            {values.map((name) => (
+            {values.map(({ value, label }) => (
                 <MenuItem
-                    key={name}
-                    value={name}
+                    key={value}
+                    value={value}
                 >
-                    {name}
+                    {label}
                 </MenuItem>
             ))}
         </Select>

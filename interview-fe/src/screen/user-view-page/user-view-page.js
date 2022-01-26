@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { equals, propOr, length, propEq, find } from "ramda";
+import { equals, propOr, length, propEq, find, map } from "ramda";
 import { useNavigate } from "react-router";
 import Button from '@mui/material/Button';
 import { getUser } from "../../api/user";
@@ -7,9 +7,9 @@ import { UserTable } from "../../components";
 import "./user-view-page.css"
 import { UserContext } from "../../context/user-context";
 
-
+const getDropdownValues = ({ id, name, last }) => { return { label: `${name} ${last}`, value: id } };
 const UserViewPage = () => {
-  const { setUser } = useContext(UserContext);
+  const { setUser, setUserList } = useContext(UserContext);
   const history = useNavigate();
   const [data, setData] = useState([]);
 
@@ -33,13 +33,12 @@ const UserViewPage = () => {
         if (res.error) {
           throw res.error;
         }
-        console.log(res)
-        setData(propOr([], 'users')(res));
+        const users = propOr([], 'users')(res);
+        const userDropdown = map(getDropdownValues)(users);
+        setData(users);
+        setUserList(userDropdown);
         return res;
       })
-      .catch((error) => {
-
-      });
   }, []);
 
   return <>
