@@ -51,7 +51,6 @@ const ViewMessages = () => {
 
   return <>
     <Button variant="outlined" onClick={handleView} >Add message</Button>
-    <InboxItem/>
     <Tabs value={value} onChange={handleChange} centered>
       <Tab label="All messages" />
       <Tab label="My messages" />

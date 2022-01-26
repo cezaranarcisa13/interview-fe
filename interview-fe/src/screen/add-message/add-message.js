@@ -15,7 +15,7 @@ import InboxItem from "../inbox/inbox";
 import "./add-message.css";
 
 const SendMessage = () => {
-    const history=useNavigate();
+    const history = useNavigate();
     const { usersList } = useContext(UserContext);
     const [createForm, setCreateForm] = useState({
         user: "",
@@ -56,16 +56,16 @@ const SendMessage = () => {
     const handleSubmit = () => {
         const { user, message } = createForm;
         let isError = false;
-        const isValid = !checkForTrue(createForm) && !checkFieldValue() ;
+        const isValid = !checkForTrue(createForm) && !checkFieldValue();
         if (isValid) {
-          sendMessage({ userId:user, message }).then((error) => {
-            isError = error.isError;
-            if (isError === undefined) {
-              setError(false);
-             history("/messages");
-            }
-            isError && setError(true);
-          });
+            sendMessage({ userId: user, message }).then((error) => {
+                isError = error.isError;
+                if (isError === undefined) {
+                    setError(false);
+                    history("/messages");
+                }
+                isError && setError(true);
+            });
         }
     };
 
@@ -86,7 +86,7 @@ const SendMessage = () => {
             xs={12}
             className="send-container"
         >
-            <InboxItem/>
+         
             <Grid item xs={6}>
                 <Card title="Login">
                     <Grid item container spacing={3} className="send-container" >
