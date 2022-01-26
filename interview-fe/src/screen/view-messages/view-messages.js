@@ -5,7 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useLocation } from "react-router";
 import { getMessages } from "../../api/messages";
-import CardComponent from "../../components/card-component/card-component";
+import { CardComponent } from "../../components";
 import "./view-messages.css"
 
 const ViewMessages = () => {

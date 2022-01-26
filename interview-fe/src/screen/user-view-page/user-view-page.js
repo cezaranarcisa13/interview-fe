@@ -3,7 +3,7 @@ import { equals, propOr, length, propEq, find } from "ramda";
 import { useNavigate } from "react-router";
 import Button from '@mui/material/Button';
 import { getUser } from "../../api/user";
-import UserTable from "../../components/user-table/user-table";
+import { UserTable } from "../../components";
 import "./user-view-page.css"
 import { UserContext } from "../../context/user-context";
 
@@ -29,17 +29,17 @@ const UserViewPage = () => {
 
   useEffect(() => {
     getUser().then((res) => res.json())
-    .then((res) => {
-      if (res.error) {
-        throw res.error;
-      }
-      console.log(res)
-      setData(propOr([], 'users')(res));
-      return res;
-    })
-    .catch((error) => {
+      .then((res) => {
+        if (res.error) {
+          throw res.error;
+        }
+        console.log(res)
+        setData(propOr([], 'users')(res));
+        return res;
+      })
+      .catch((error) => {
 
-    });
+      });
   }, []);
 
   return <> <Button variant="outlined" onClick={handleView} disabled={isDisabled}>View messages</Button>
