@@ -11,6 +11,7 @@ import {
 import { Dropdown } from "../../components";
 import { UserContext } from "../../context/user-context";
 import { sendMessage } from "../../api/messages";
+import InboxItem from "../inbox/inbox";
 import "./add-message.css";
 
 const SendMessage = () => {
@@ -85,6 +86,7 @@ const SendMessage = () => {
             xs={12}
             className="send-container"
         >
+            <InboxItem/>
             <Grid item xs={6}>
                 <Card title="Login">
                     <Grid item container spacing={3} className="send-container" >
