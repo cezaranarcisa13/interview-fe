@@ -6,9 +6,14 @@ interview-fe
    * Message page - can view all messages from application or the messages from the current selected user.
    * Send message - can send messages to any user from user page
 # Git commend
-   *To start the project 
+   * To start the project 
    Some basic Git commands are:
 ```
    npm i
    npm start
+   ```
+   * To run test
+     Some basic Git commands are:
+```
+   npm run test
    ```
