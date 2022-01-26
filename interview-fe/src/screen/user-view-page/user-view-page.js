@@ -7,6 +7,7 @@ import UserTable from "../../components/user-table/user-table";
 const UserViewPage=()=>{
     const history = useNavigate();
     const [data,setData]=useState([]);
+    
     const handleClick=(ev, row)=>{
         history("/messages", { state: row });
     }
