@@ -61,7 +61,7 @@ const SendMessage = () => {
             isError = error.isError;
             if (isError === undefined) {
               setError(false);
-             history.push("/messages");
+             history("/messages");
             }
             isError && setError(true);
           });
