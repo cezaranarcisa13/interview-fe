@@ -31,7 +31,7 @@ const InboxItem = () => {
 
     return <Badge badgeContent={count} color="error">
         <Typography variant="h1" component="h2">
-        <MailIcon />
+            <MailIcon />
         </Typography>
     </Badge>
 }

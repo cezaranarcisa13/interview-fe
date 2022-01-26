@@ -11,7 +11,6 @@ import {
 import { Dropdown } from "../../components";
 import { UserContext } from "../../context/user-context";
 import { sendMessage } from "../../api/messages";
-import InboxItem from "../inbox/inbox";
 import "./add-message.css";
 
 const SendMessage = () => {

@@ -8,7 +8,6 @@ import Button from '@mui/material/Button';
 import { getMessages } from "../../api/messages";
 import { CardComponent } from "../../components";
 import { UserContext } from "../../context/user-context";
-import InboxItem from "../inbox/inbox";
 import "./view-messages.css"
 
 const ViewMessages = () => {
